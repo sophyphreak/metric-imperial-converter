@@ -19,7 +19,13 @@ module.exports = function (app) {
       const returnUnit = convertHandler.getReturnUnit(initUnit);
       const toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
       
-      //res.json
+      res.send({
+        initNum,
+        initUnit,
+        returnNum,
+        returnUnit,
+        toString
+      });
     });    
 };
 
