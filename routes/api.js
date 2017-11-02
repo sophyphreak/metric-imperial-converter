@@ -1,12 +1,6 @@
-/*
-*
-*
-*       Complete the API routing below
-*
-*
-*/
-
 'use strict';
+
+const { Router } = require('express');
 
 const ConvertHandler = require('../controllers/convertHandler.js');
 
@@ -24,6 +18,7 @@ module.exports = function (app) {
       const toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
       
       //res.json
-    });
-    
+    });    
 };
+
+module.exports = { router };

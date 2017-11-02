@@ -1,12 +1,12 @@
 'use strict';
 
-var express     = require('express');
-var helmet      = require('helmet');
-var bodyParser  = require('body-parser');
+const express = require('express');
+const helmet = require('helmet');
+const bodyParser = require('body-parser');
 
-var apiRoutes         = require('./routes/api.js');
+const apiRoutes = require('./routes/api.js');
 
-var app = express();
+const app = express();
 
 app.use(helmet());
 
