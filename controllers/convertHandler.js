@@ -39,7 +39,7 @@ function ConvertHandler() {
       case 'mi':
         return 'km';
       case 'km':
-        return mi;
+        return 'mi';
       default:
         throw new Error('initUnit invalid');
     };
