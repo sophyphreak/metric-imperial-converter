@@ -32,8 +32,8 @@ app.use((req, res, next) => {
 });
 
 //Start our server and tests!
-app.listen(process.env.PORT || 3000, () => {
-  console.log("Listening on port " + process.env.PORT);
+const listener = app.listen(process.env.PORT || 3000, () => {
+  console.log("Listening on port " + listener.address().port);
 });
 
 module.exports = app; //for testing
