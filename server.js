@@ -4,7 +4,7 @@ const express = require('express');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
 
-const apiRoutes = require('./routes/api.js');
+const { apiRouter } = require('./routes/api.js');
 
 const app = express();
 
@@ -22,7 +22,7 @@ app.route('/')
   });
 
 //Routing for API 
-apiRoutes(app);  
+app.use('/api', apiRouter);
     
 //404 Not Found Middleware
 app.use((req, res, next) => {

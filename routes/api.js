@@ -1,14 +1,16 @@
 'use strict';
 
-const { Router } = require('express');
+const express = require('express');
 
 const ConvertHandler = require('../controllers/convertHandler.js');
+
+const apiRouter = express.Router();
 
 module.exports = function (app) {
   
   const convertHandler = new ConvertHandler();
 
-  app.route('/api/convert')
+  app.route('/convert')
     .get(function (req, res){
       const input = req.query.input;
       const initNum = convertHandler.getNum(input);
@@ -21,4 +23,4 @@ module.exports = function (app) {
     });    
 };
 
-module.exports = { router };
+module.exports = { apiRouter };
