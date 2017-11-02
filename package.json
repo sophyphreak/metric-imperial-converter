@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "body-parser": "^1.15.2",
-    "expr-eval": "^1.2.0",
     "express": "^4.14.0",
     "helmet": "^3.9.0",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "mathjs": "^3.16.5"
   },
   "engines": {
     "node": "7.6.3"

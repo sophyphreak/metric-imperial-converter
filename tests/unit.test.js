@@ -22,19 +22,19 @@ describe('Unit Tests', () => {
       done();
     });
     
-    // it('Fractional Input', (done) => {
-    //   const input = '20/10mi';
-    //   const result = convertHandler.getNum(input);
-    //   expect(result).toBe(2);      
-    //   done();
-    // });
+    it('Fractional Input', (done) => {
+      const input = '20/10mi';
+      const result = convertHandler.getNum(input);
+      expect(result).toBe(2);      
+      done();
+    });
     
-    // it('Fractional Input w/ Decimal', (done) => {
-    //   const input = '22.2/2km';
-    //   const result = convertHandler.getNum(input);
-    //   expect(result).toBe(11.1);
-    //   done();
-    // });
+    it('Fractional Input w/ Decimal', (done) => {
+      const input = '22.2/2km';
+      const result = convertHandler.getNum(input);
+      expect(result).toBe(11.1);
+      done();
+    });
     
     it('Invalid Input (double fraction)', (done) => {
       const input = '32/34/65L';
@@ -48,7 +48,7 @@ describe('Unit Tests', () => {
       const result = convertHandler.getNum(input);
       expect(result).toBeFalsy();
       done();
-    }); 
+    });
   });
   
   // describe('Function convertHandler.getUnit(input)', () => {

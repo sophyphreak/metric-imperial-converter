@@ -1,10 +1,8 @@
-const { Parser } = require('expr-eval');
-
-const parser = new Parser();
+const math = require('mathjs');
 
 function ConvertHandler() {
   
-  this.getNum = function(input) {
+  this.getNum = (input) => {
     if (!input) return null;
     const re = /[\d./]+/;
     const result = re.exec(input)[0];
@@ -22,7 +20,7 @@ function ConvertHandler() {
         // throw new Error('Number invalid');      
       };
     };
-    return Number(result);
+    return math.eval(result);
   };
   
   this.getUnit = function(input) {
