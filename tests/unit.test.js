@@ -1,44 +1,53 @@
 const expect = require('expect');
-const request = require('supertest');
 
-var ConvertHandler = require('../controllers/convertHandler.js');
+const ConvertHandler = require('../controllers/convertHandler.js');
 
-var convertHandler = new ConvertHandler();
+const convertHandler = new ConvertHandler();
 
 describe('Unit Tests', () => {
   
   describe('Function convertHandler.getNum(input)', () => {
     
     it('Whole number input', (done) => {
-      // change from chai to mocha
-      var input = '32L';
-      assert.equal(convertHandler.getNum(input),32);
+      const input = '32L';
+      const result = convertHandler.getNum(input);
+      expect(result).toBe(32);
       done();
     });
     
     it('Decimal Input', (done) => {
-      
-      //done();
+      const input = '32.2kg';
+      const result = convertHandler.getNum(input);
+      expect(result).toBe(32.2);
+      done();
     });
     
     it('Fractional Input', (done) => {
-      
-      //done();
+      const input = '20/10mi';
+      const result = convertHandler.getNum(input);
+      expect(result).toBe(2);      
+      done();
     });
     
     it('Fractional Input w/ Decimal', (done) => {
-      
-      //done();
+      const input = '22.2/2km';
+      const result = convertHandler.getNum(input);
+      expect(result).toBe(11.1);
+      done();
     });
     
     it('Invalid Input (double fraction)', (done) => {
-      
-      //done();
+      const input = '32/34/65L';
+      const result = convertHandler.getNum(input);
+      expect(result).toBeFalsy();
+      done();
     });
     
     it('No Numerical Input', (done) => {
-      
-      //done();
+      const input = '';
+      const result = convertHandler.getNum(input);
+      expect(result).toBeFalsy();
+      done();
     }); 
   });
   
