@@ -10,14 +10,12 @@ function ConvertHandler() {
     if (slashMatches) {
       if (slashMatches.length > 1) {
         return null;
-        // throw new Error('Number invalid');
       };
     };
     const periodMatches = result.match(/\./g);
     if (periodMatches) {
       if (periodMatches.length > 1) {
         return null;
-        // throw new Error('Number invalid');      
       };
     };
     return math.eval(result);
