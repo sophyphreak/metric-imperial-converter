@@ -90,31 +90,29 @@ describe('Unit Tests', () => {
       done();
     });
     
-    test('L to Gal', function(done) {
+    it('L to Gal', (done) => {
       
       //done();
     });
     
-    test('Mi to Km', function(done) {
+    it('Mi to Km', (done) => {
       
       //done();
     });
     
-    test('Km to Mi', function(done) {
+    it('Km to Mi', (done) => {
       
       //done();
     });
     
-    test('Lbs to Kg', function(done) {
+    it('Lbs to Kg', (done) => {
       
       //done();
     });
     
-    test('Kg to Lbs', function(done) {
+    it('Kg to Lbs', (done) => {
       
       //done();
     });
-    
   });
-
 });
