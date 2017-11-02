@@ -4,10 +4,8 @@ var express     = require('express');
 var helmet      = require('helmet');
 var bodyParser  = require('body-parser');
 var expect      = require('chai').expect;
-var cors        = require('cors');
 
 var apiRoutes         = require('./routes/api.js');
-var fccTestingRoutes  = require('./routes/fcctesting.js');
 var runner            = require('./test-runner');
 
 var app = express();
@@ -15,8 +13,6 @@ var app = express();
 app.use(helmet());
 
 app.use('/public', express.static(process.cwd() + '/public'));
-
-app.use(cors({origin: '*'})); //For FCC testing purposes only
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -26,9 +22,6 @@ app.route('/')
   .get(function (req, res) {
     res.sendFile(process.cwd() + '/views/index.html');
   });
-
-//For FCC testing purposes
-fccTestingRoutes(app);
 
 //Routing for API 
 apiRoutes(app);  

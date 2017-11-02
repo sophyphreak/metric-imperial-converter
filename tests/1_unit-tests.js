@@ -1,57 +1,51 @@
-/*
-*
-*
-*       FILL IN EACH UNIT TEST BELOW COMPLETELY
-*       -----[Keep the tests in the same order!]----
-*       (if additional are added, keep them at the very end!)
-*/
+const expect = require('expect');
+const request = require('supertest');
 
-var chai = require('chai');
-var assert = chai.assert;
 var ConvertHandler = require('../controllers/convertHandler.js');
 
 var convertHandler = new ConvertHandler();
 
-suite('Unit Tests', function(){
+describe('Unit Tests', () => {
   
-  suite('Function convertHandler.getNum(input)', function() {
+  describe('Function convertHandler.getNum(input)', () => {
     
-    test('Whole number input', function(done) {
+    it('Whole number input', (done) => {
+      // change from chai to mocha
       var input = '32L';
       assert.equal(convertHandler.getNum(input),32);
       done();
     });
     
-    test('Decimal Input', function(done) {
+    it('Decimal Input', (done) => {
       
       //done();
     });
     
-    test('Fractional Input', function(done) {
+    it('Fractional Input', (done) => {
       
       //done();
     });
     
-    test('Fractional Input w/ Decimal', function(done) {
+    it('Fractional Input w/ Decimal', (done) => {
       
       //done();
     });
     
-    test('Invalid Input (double fraction)', function(done) {
+    it('Invalid Input (double fraction)', (done) => {
       
       //done();
     });
     
-    test('No Numerical Input', function(done) {
+    it('No Numerical Input', (done) => {
       
       //done();
     }); 
-    
   });
   
-  suite('Function convertHandler.getUnit(input)', function() {
+  describe('Function convertHandler.getUnit(input)', () => {
     
-    test('For Each Valid Unit Inputs', function(done) {
+    it('For Each Valid Unit Inputs', (done) => {
+      // convert from chai to mocha
       var input = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
       input.forEach(function(ele) {
         //assert
@@ -59,16 +53,15 @@ suite('Unit Tests', function(){
       done();
     });
     
-    test('Unknown Unit Input', function(done) {
+    it('Unknown Unit Input', (done) => {
       
       //done();
     });  
-    
   });
   
-  suite('Function convertHandler.getReturnUnit(initUnit)', function() {
+  describe('Function convertHandler.getReturnUnit(initUnit)', () => {
     
-    test('For Each Valid Unit Inputs', function(done) {
+    it('For Each Valid Unit Inputs', (done) => {
       var input = ['gal','l','mi','km','lbs','kg'];
       var expect = ['l','gal','km','mi','kg','lbs'];
       input.forEach(function(ele, i) {
@@ -79,18 +72,18 @@ suite('Unit Tests', function(){
     
   });  
   
-  suite('Function convertHandler.spellOutUnit(unit)', function() {
+  describe('Function convertHandler.spellOutUnit(unit)', () => {
     
-    test('For Each Valid Unit Inputs', function(done) {
+    it('For Each Valid Unit Inputs', (done) => {
       //see above example for hint
       done();
     });
-    
   });
   
-  suite('Function convertHandler.convert(num, unit)', function() {
+  describe('Function convertHandler.convert(num, unit)', () => {
     
-    test('Gal to L', function(done) {
+    it('Gal to L', function(done) {
+      // convert from chai to mocha
       var input = [5, 'gal'];
       var expected = 18.9271;
       assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 tolerance
