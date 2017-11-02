@@ -1,21 +1,33 @@
-/*
-*
-*
-*       Complete the handler logic below
-*       
-*       
-*/
+const { Parser } = require('expr-eval');
+
+const parser = new Parser();
 
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var re = /[\d./]+/;
-    return re.exec(input); 
+    if (!input) return null;
+    const re = /[\d./]+/;
+    const result = re.exec(input)[0];
+    const slashMatches = result.match(/\//g);
+    if (slashMatches) {
+      if (slashMatches.length > 1) {
+        return null;
+        // throw new Error('Number invalid');
+      };
+    };
+    const periodMatches = result.match(/\./g);
+    if (periodMatches) {
+      if (periodMatches.length > 1) {
+        return null;
+        // throw new Error('Number invalid');      
+      };
+    };
+    return Number(result);
   };
   
   this.getUnit = function(input) {
-    var re = /\w+/;
-    return re.exec(input);
+    const re = /\w+/;
+    return re.exec(input); 
   };
   
   this.getReturnUnit = function(initUnit) {
