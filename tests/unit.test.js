@@ -66,8 +66,8 @@ describe('Unit Tests', () => {
     });
     
     it('Unknown Unit Input', (done) => {
-      const inputArr = ['asdf', 'ASDF', 'iiifj', '', '123', null];
-      inputArr.forEach((input) => {
+      const inputs = ['asdf', 'ASDF', 'iiifj', '', '123', null];
+      inputs.forEach((input) => {
         const result = convertHandler.getUnit('100' + input);
         expect(result).toBeFalsy();
       });
@@ -75,18 +75,17 @@ describe('Unit Tests', () => {
     });  
   });
   
-  // describe('Function convertHandler.getReturnUnit(initUnit)', () => {
+  describe('Function convertHandler.getReturnUnit(initUnit)', () => {
     
-  //   it('For Each Valid Unit Inputs', (done) => {
-  //     var input = ['gal','l','mi','km','lbs','kg'];
-  //     var expect = ['l','gal','km','mi','kg','lbs'];
-  //     input.forEach(function(ele, i) {
-  //       assert.equal(convertHandler.getReturnUnit(ele), expect[i]);
-  //     });
-  //     done();
-  //   });
-    
-  // });  
+    it('For Each Valid Unit Inputs', (done) => {
+      var inputs = ['gal','L','mi','km','lbs','kg'];
+      var expectedResult = ['L','gal','km','mi','kg','lbs'];
+      inputs.forEach((input, index) => {
+        expect(convertHandler.getReturnUnit(input)).toBe(expectedResult[index]);
+      });
+      done();
+    });
+  });  
   
   // describe('Function convertHandler.spellOutUnit(unit)', () => {
     
