@@ -36,8 +36,6 @@ All 5 functional tests are complete and passing.
 
 OTHER TODO:
 
-Put in temp rerouting frontend like api challenges
-
 Convert frontend to something that works in React
 
 ---

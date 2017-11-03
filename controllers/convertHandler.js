@@ -81,8 +81,8 @@ function ConvertHandler() {
         return initNum * miToKm;
       case 'km':
         return initNum / miToKm;
-      // default:
-      //   throw new Error('initUnit invalid');
+      default:
+        throw new Error('initUnit invalid');
     };
   };
   
