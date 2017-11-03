@@ -18,12 +18,12 @@ I will prevent cross-site scripting (XSS) attacks.
 IN PROGRESS:
 
 I can GET /api/convert with a single parameter containing an accepted number and unit and have it converted. (Hint: Split the input by looking for the index of the first character which will mark the start of the unit)
-
-TODO:
-
 I can convert 'gal' to 'L' and vice versa. (1 gal to 3.78541 L)
 I can convert 'lbs' to 'kg' and vice versa. (1 lbs to 0.453592 kg)
 I can convert 'mi' to 'km' and vice versa. (1 mi to 1.60934 km)
+
+TODO:
+
 If my unit of measurement is invalid, returned will be 'invalid unit'.
 If my number is invalid, returned with will 'invalid number'.
 If both are invalid, return will be 'invalid number and unit'.
