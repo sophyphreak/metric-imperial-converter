@@ -45,9 +45,9 @@ describe('Unit Tests', () => {
     });
     
     it('No Numerical Input', (done) => {
-      const input = '';
+      const input = 'km';
       const result = convertHandler.getNum(input);
-      expect(result).toBeFalsy();
+      expect(result).toBe(1);
       done();
     });
   });

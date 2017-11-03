@@ -3,22 +3,23 @@ const math = require('mathjs');
 class ConvertHandler {
   
   getNum(input) {
-    if (!input) return null;
     const re = /[\d./]+/;
-    const result = re.exec(input)[0];
-    const slashMatches = result.match(/\//g);
+    let amount = re.exec(input);
+    if (!amount) return 1;
+    amount = amount[0];
+    const slashMatches = amount.match(/\//g);
     if (slashMatches) {
       if (slashMatches.length > 1) {
         return null;
       };
     };
-    const periodMatches = result.match(/\./g);
+    const periodMatches = amount.match(/\./g);
     if (periodMatches) {
       if (periodMatches.length > 1) {
         return null;
       };
     };
-    return math.eval(result);
+    return math.eval(amount);
   };
   
   getUnit(input) {
