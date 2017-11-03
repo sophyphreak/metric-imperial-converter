@@ -94,7 +94,7 @@ class ConvertHandler {
   };
   
   getString(initNum, initUnit, returnNum, returnUnit) {
-    return `${initNum} ${initUnit} converts to ${returnNum} ${returnUnit}`;
+    return `${initNum} ${this.spellOutUnit(initUnit)} converts to ${math.round(returnNum, 5)} ${this.spellOutUnit(returnUnit)}`;
   };
   
 }
