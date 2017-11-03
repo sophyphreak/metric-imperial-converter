@@ -22,8 +22,8 @@ function ConvertHandler() {
   };
   
   this.getUnit = function(input) {
-    const re = /\w+/;
-    return re.exec(input); 
+    const re = /[A-Za-z]+/;
+    return re.exec(input)[0]; 
   };
   
   this.getReturnUnit = function(initUnit) {
@@ -81,8 +81,8 @@ function ConvertHandler() {
         return initNum * miToKm;
       case 'km':
         return initNum / miToKm;
-      default:
-        throw new Error('initUnit invalid');
+      // default:
+      //   throw new Error('initUnit invalid');
     };
   };
   
