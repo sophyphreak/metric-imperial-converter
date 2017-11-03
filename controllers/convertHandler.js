@@ -23,7 +23,13 @@ class ConvertHandler {
   
   getUnit(input) {
     const re = /[A-Za-z]+/;
-    return re.exec(input)[0]; 
+    let unit = re.exec(input);
+    if (!unit) return null;
+    unit = unit[0].toLowerCase();
+    if (unit === 'l') unit = 'L';
+    const possibleInputs = ['gal', 'L', 'mi', 'km', 'lbs', 'kg'];
+    if (possibleInputs.indexOf(unit) === -1) return null;
+    return unit; 
   };
   
   getReturnUnit(initUnit) {
