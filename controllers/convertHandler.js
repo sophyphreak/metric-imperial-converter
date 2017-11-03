@@ -21,12 +21,12 @@ function ConvertHandler() {
     return math.eval(result);
   };
   
-  this.getUnit = function(input) {
+  this.getUnit = (input) => {
     const re = /[A-Za-z]+/;
     return re.exec(input)[0]; 
   };
   
-  this.getReturnUnit = function(initUnit) {
+  this.getReturnUnit = (initUnit) => {
     switch (initUnit) {
       case 'L':
         return 'gal';
@@ -45,7 +45,7 @@ function ConvertHandler() {
     };
   };
 
-  this.spellOutUnit = function(unit) {
+  this.spellOutUnit = (unit) => {
     switch (unit) {
       case 'L':
         return 'liters';
@@ -64,7 +64,7 @@ function ConvertHandler() {
     };
   };
   
-  this.convert = function(initNum, initUnit) {
+  this.convert = (initNum, initUnit) => {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
@@ -86,7 +86,7 @@ function ConvertHandler() {
     };
   };
   
-  this.getString = function(initNum, initUnit, returnNum, returnUnit) {
+  this.getString = (initNum, initUnit, returnNum, returnUnit) => {
     return `${initNum} ${initUnit} converts to ${returnNum} ${returnUnit}`;
   };
   
