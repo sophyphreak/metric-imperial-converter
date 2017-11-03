@@ -78,8 +78,8 @@ describe('Unit Tests', () => {
   describe('Function convertHandler.getReturnUnit(initUnit)', () => {
     
     it('For Each Valid Unit Inputs', (done) => {
-      var inputs = ['gal','L','mi','km','lbs','kg'];
-      var expectedResult = ['L','gal','km','mi','kg','lbs'];
+      const inputs = ['gal','L','mi','km','lbs','kg'];
+      const expectedResult = ['L','gal','km','mi','kg','lbs'];
       inputs.forEach((input, index) => {
         expect(convertHandler.getReturnUnit(input)).toBe(expectedResult[index]);
       });
@@ -87,20 +87,24 @@ describe('Unit Tests', () => {
     });
   });  
   
-  // describe('Function convertHandler.spellOutUnit(unit)', () => {
+  describe('Function convertHandler.spellOutUnit(unit)', () => {
     
-  //   it('For Each Valid Unit Inputs', (done) => {
-  //     //see above example for hint
-  //     done();
-  //   });
-  // });
+    it('For Each Valid Unit Inputs', (done) => {
+      const inputs = ['gal', 'L', 'mi', 'km', 'lbs', 'kg'];
+      const expectedResult = ['gallons', 'liters', 'miles', 'kilometers', 'pounds', 'kilograms'];
+      inputs.forEach((input, index) => {
+        expect(convertHandler.spellOutUnit(input)).toBe(expectedResult[index]);
+      });
+      done();
+    });
+  });
   
   // describe('Function convertHandler.convert(num, unit)', () => {
     
   //   it('Gal to L', function(done) {
   //     // convert from chai to mocha
-  //     var input = [5, 'gal'];
-  //     var expected = 18.9271;
+  //     const input = [5, 'gal'];
+  //     const expected = 18.9271;
   //     assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 tolerance
   //     done();
   //   });
