@@ -1,8 +1,8 @@
 const math = require('mathjs');
 
-function ConvertHandler() {
+class ConvertHandler() {
   
-  this.getNum = (input) => {
+  getNum(input) {
     if (!input) return null;
     const re = /[\d./]+/;
     const result = re.exec(input)[0];
@@ -21,12 +21,12 @@ function ConvertHandler() {
     return math.eval(result);
   };
   
-  this.getUnit = (input) => {
+  getUnit(input) {
     const re = /[A-Za-z]+/;
     return re.exec(input)[0]; 
   };
   
-  this.getReturnUnit = (initUnit) => {
+  getReturnUnit(initUnit) {
     switch (initUnit) {
       case 'L':
         return 'gal';
@@ -45,7 +45,7 @@ function ConvertHandler() {
     };
   };
 
-  this.spellOutUnit = (unit) => {
+  spellOutUnit(unit) {
     switch (unit) {
       case 'L':
         return 'liters';
@@ -64,7 +64,7 @@ function ConvertHandler() {
     };
   };
   
-  this.convert = (initNum, initUnit) => {
+  convert(initNum, initUnit) {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
@@ -86,10 +86,10 @@ function ConvertHandler() {
     };
   };
   
-  this.getString = (initNum, initUnit, returnNum, returnUnit) => {
+  getString(initNum, initUnit, returnNum, returnUnit) {
     return `${initNum} ${initUnit} converts to ${returnNum} ${returnUnit}`;
   };
   
 }
 
-module.exports = ConvertHandler;
+module.exports = { ConvertHandler };

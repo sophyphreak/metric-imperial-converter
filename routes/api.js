@@ -2,7 +2,7 @@
 
 const express = require('express');
 
-const ConvertHandler = require('../controllers/convertHandler.js');
+const { ConvertHandler } = require('../controllers/convertHandler.js');
 
 const apiRouter = express.Router();
 const convertHandler = new ConvertHandler();

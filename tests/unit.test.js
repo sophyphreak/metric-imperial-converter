@@ -1,6 +1,6 @@
 const expect = require('expect');
 
-const ConvertHandler = require('../controllers/convertHandler.js');
+const { ConvertHandler } = require('../controllers/convertHandler.js');
 
 const convertHandler = new ConvertHandler();
 
