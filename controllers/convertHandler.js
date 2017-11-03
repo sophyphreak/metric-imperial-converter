@@ -1,6 +1,6 @@
 const math = require('mathjs');
 
-class ConvertHandler() {
+class ConvertHandler {
   
   getNum(input) {
     if (!input) return null;
