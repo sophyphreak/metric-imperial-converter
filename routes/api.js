@@ -15,7 +15,7 @@ apiRouter.get('/convert', (req, res) => {
   const returnUnit = convertHandler.getReturnUnit(initUnit);
   const toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
   
-  if (!initNum && !initUnit) res.status(400).send('invalid number and invalid unit');
+  if (!initNum && !initUnit) res.status(400).send('invalid number and unit');
   else if (!initNum) res.status(400).send('invalid number');
   else if (!initUnit) res.status(400).send('invalid unit');
   else {
