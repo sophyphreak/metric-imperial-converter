@@ -24,10 +24,11 @@ If both are invalid, return will be 'invalid number and unit'.
 I can use fractions, decimals or both in my parameter(ie. 5, 1/2, 2.5/6), but if nothing is provided it will default to 1.
 My return will consist of the initNum, initUnit, returnNum, returnUnit, and string spelling out units in format '{initNum} {initial_Units} converts to {returnNum} {return_Units}' with the result rounded to 5 decimals in the string.
 All 16 unit tests are complete and passing.
+All 5 functional tests are complete and passing.
 
 IN PROGRESS:
 
-All 5 functional tests are complete and passing.
+Convert frontend to something that works in React
 
 TODO:
 
@@ -36,7 +37,6 @@ TODO:
 
 OTHER TODO:
 
-Convert frontend to something that works in React
 
 ---
 
