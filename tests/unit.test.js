@@ -1,4 +1,5 @@
 const expect = require('expect');
+const math = require('mathjs');
 
 const { ConvertHandler } = require('../controllers/convertHandler.js');
 
@@ -99,39 +100,72 @@ describe('Unit Tests', () => {
     });
   });
   
-  // describe('Function convertHandler.convert(num, unit)', () => {
+  describe('Function convertHandler.convert(num, unit)', () => {
     
-  //   it('Gal to L', function(done) {
-  //     // convert from chai to mocha
-  //     const input = [5, 'gal'];
-  //     const expected = 18.9271;
-  //     assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 tolerance
-  //     done();
-  //   });
+    it('Gal to L', function(done) {
+      const input = {
+        num: 5,
+        unit: 'gal'
+      };
+      const expectedResult = 18.9271;
+      const result = convertHandler.convert(input.num, input.unit);
+      expect(math.round(result, 4)).toBe(expectedResult);
+      done();
+    });
     
-  //   it('L to Gal', (done) => {
-      
-  //     //done();
-  //   });
+    it('L to Gal', (done) => {
+      const input = {
+        num: 10,
+        unit: 'L'
+      };
+      const expectedResult = 2.6417;
+      const result = convertHandler.convert(input.num, input.unit);
+      expect(math.round(result, 4)).toBe(expectedResult);
+      done();
+    });
     
-  //   it('Mi to Km', (done) => {
-      
-  //     //done();
-  //   });
+    it('Mi to Km', (done) => {
+      const input = {
+        num: 172,
+        unit: 'mi'
+      };
+      const expectedResult = 276.806;
+      const result = convertHandler.convert(input.num, input.unit);
+      expect(math.round(result, 3)).toBe(expectedResult);
+      done();   
+    });
     
-  //   it('Km to Mi', (done) => {
-      
-  //     //done();
-  //   });
+    it('Km to Mi', (done) => {
+      const input = {
+        num: 865,
+        unit: 'km'
+      };
+      const expectedResult = 537.487;
+      const result = convertHandler.convert(input.num, input.unit);
+      expect(math.round(result, 3)).toBe(expectedResult);
+      done();   
+    });
     
-  //   it('Lbs to Kg', (done) => {
-      
-  //     //done();
-  //   });
+    it('Lbs to Kg', (done) => {
+      const input = {
+        num: 2000,
+        unit: 'lbs'
+      };
+      const expectedResult = 907.184;
+      const result = convertHandler.convert(input.num, input.unit);
+      expect(math.round(result, 3)).toBe(expectedResult);
+      done();    
+    });
     
-  //   it('Kg to Lbs', (done) => {
-      
-  //     //done();
-  //   });
-  // });
+    it('Kg to Lbs', (done) => {
+      const input = {
+        num: 5432,
+        unit: 'kg'
+      };
+      const expectedResult = 11975.52;
+      const result = convertHandler.convert(input.num, input.unit);
+      expect(math.round(result, 2)).toBe(expectedResult);
+      done();    
+    });
+  });
 });
