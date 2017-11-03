@@ -15,13 +15,18 @@ apiRouter.get('/convert', (req, res) => {
   const returnUnit = convertHandler.getReturnUnit(initUnit);
   const toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
   
-  res.send({
-    initNum,
-    initUnit,
-    returnNum,
-    returnUnit,
-    toString
-  });
+  if (!initNum && !initUnit) res.status(400).send('invalid number and invalid unit');
+  else if (!initNum) res.status(400).send('invalid number');
+  else if (!initUnit) res.status(400).send('invalid unit');
+  else {
+    res.send({
+      initNum,
+      initUnit,
+      returnNum,
+      returnUnit,
+      toString
+    });
+  };
 });    
 
 module.exports = { apiRouter };

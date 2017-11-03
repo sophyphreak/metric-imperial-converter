@@ -47,7 +47,7 @@ class ConvertHandler {
       case 'km':
         return 'mi';
       default:
-        throw new Error('initUnit invalid');
+        return null;
     };
   };
 
@@ -66,7 +66,7 @@ class ConvertHandler {
       case 'km':
         return 'kilometers';
       default:
-        throw new Error('unit invalid');
+        return null;
     };
   };
   
@@ -88,7 +88,7 @@ class ConvertHandler {
       case 'km':
         return initNum / miToKm;
       default:
-        throw new Error('initUnit invalid');
+        return null;
     };
   };
   
