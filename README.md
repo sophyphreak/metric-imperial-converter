@@ -1,4 +1,4 @@
-**FreeCodeCamp**- Information Security and Quality Assurance
+Information Security and Quality Assurance
 ------
 
 1) SET NODE_ENV to `test` without quotes
@@ -25,20 +25,3 @@ I can use fractions, decimals or both in my parameter(ie. 5, 1/2, 2.5/6), but if
 My return will consist of the initNum, initUnit, returnNum, returnUnit, and string spelling out units in format '{initNum} {initial_Units} converts to {returnNum} {return_Units}' with the result rounded to 5 decimals in the string.
 All 16 unit tests are complete and passing.
 All 5 functional tests are complete and passing.
-
-IN PROGRESS:
-
-Convert frontend to something that works in React
-
-TODO:
-
-
----
-
-OTHER TODO:
-
-
----
-
-Original from FCC
-https://hard-twilight.glitch.me/
